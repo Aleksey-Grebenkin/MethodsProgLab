@@ -16,8 +16,7 @@ namespace VirtualMemory
         /// <summary>
         /// Флаг модификации
         /// </summary>
-        public bool Modified => _modified;
-        public bool _modified;
+        public bool Modified { get; private set; }
 
         /// <summary>
         /// Флаг блокировки записи
@@ -27,8 +26,7 @@ namespace VirtualMemory
         /// <summary>
         /// Время последнего изменения в файле
         /// </summary>
-        public DateTime Timestamp => _timestamp;
-        private DateTime _timestamp = DateTime.Now;
+        public DateTime Timestamp { get; private set; } = DateTime.Now;
 
         /// <summary>
         /// Количество элементов в блоке, доступные для работы
@@ -52,8 +50,6 @@ namespace VirtualMemory
         public MemoryList(uint id)
         {
             Id = id;
-            _modified = false;
-            Locked = false;
             _values = new int[Size / sizeof(int)];
         }
 
@@ -75,7 +71,7 @@ namespace VirtualMemory
 
             try
             {
-                _modified = binReader.ReadBoolean();
+                Modified = binReader.ReadBoolean();
                 Locked = binReader.ReadBoolean();
 
                 for (var i = 0; i < Length; i++)
@@ -83,7 +79,7 @@ namespace VirtualMemory
                     _values[i] = binReader.ReadInt32();
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new ArgumentOutOfRangeException("invalid stream for reading block");
             }
@@ -104,8 +100,8 @@ namespace VirtualMemory
                     throw new MemoryListLockedException("Блок недоступен для записи.");
                 }
 
-                _modified = true;
-                _timestamp = DateTime.Now;
+                Modified = true;
+                Timestamp = DateTime.Now;
                 _values[index] = value;
             }
         }
