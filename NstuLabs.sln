@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualMemory", "VirtualMemory\VirtualMemory.csproj", "{BF00F339-E4B0-4F86-92DF-1571D78AECA9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualMemoryTests", "VirtualMemoryTests\VirtualMemoryTests.csproj", "{3CF0974A-0CFF-49C7-9146-09FB4E55630D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{BF00F339-E4B0-4F86-92DF-1571D78AECA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF00F339-E4B0-4F86-92DF-1571D78AECA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF00F339-E4B0-4F86-92DF-1571D78AECA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CF0974A-0CFF-49C7-9146-09FB4E55630D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CF0974A-0CFF-49C7-9146-09FB4E55630D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CF0974A-0CFF-49C7-9146-09FB4E55630D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CF0974A-0CFF-49C7-9146-09FB4E55630D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
