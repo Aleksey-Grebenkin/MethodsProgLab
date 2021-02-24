@@ -11,7 +11,12 @@ namespace VirtualMemory
         /// <summary>
         /// Размер блока
         /// </summary>
-        private const uint Size = 512;
+        private const int Size = 512;
+
+        /// <summary>
+        /// Размер блока в байтах
+        /// </summary>
+        public const int BinarySize = 1 + 1 + Size;
 
         /// <summary>
         /// Флаг модификации
@@ -31,7 +36,7 @@ namespace VirtualMemory
         /// <summary>
         /// Количество элементов в блоке, доступные для работы
         /// </summary>
-        public const int Length = (int) Size / sizeof(int);
+        public const int Length = Size / sizeof(int);
 
         /// <summary>
         /// Номер страницы
